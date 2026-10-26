@@ -603,7 +603,7 @@ export default function BusinessWebsitePage() {
             </div>
 
             <div className="text-xs text-[#94A3B8] text-center md:text-right">
-              <p>Site de démonstration conçu & développé pour Tariq Abala Portfolio</p>
+              <p>Développé par Tariq Abala d&apos;une manière professionnelle</p>
               <p className="mt-1 text-slate-500 font-mono text-[10px]">
                 Stack : Next.js 16 • React 19 • Tailwind CSS • TypeScript
               </p>
