@@ -57,3 +57,21 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #A8A29E;
 }
+
+/* Executive corporate animations */
+.corporate-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.corporate-card:hover {
+  transform: translateY(-4px);
+  border-color: #1C3D2B;
+  box-shadow: 0 20px 25px -5px rgba(28, 61, 43, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.btn-corporate {
+  transition: all 0.25s ease;
+}
+.btn-corporate:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -5px rgba(28, 61, 43, 0.25);
+}
