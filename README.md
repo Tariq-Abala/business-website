@@ -1,94 +1,83 @@
-# Atlas Strategic Advisory — Cabinet de Conseil en Stratégie & Finance
+# Atlas Advisory Group — Cabinet de Conseil en Stratégie & Corporate Finance
 
-Site web d'entreprise institutionnel pour un cabinet de conseil en stratégie, ingénierie financière, M&A et transformation digitale à Casablanca Finance City.
-
-## Présentation du Projet
-Atlas Strategic Advisory est un site web d'entreprise moderne et statutaire destiné aux dirigeants d'entreprises, conseils d'administration et investisseurs. Il met en valeur les pôles d'expertise du cabinet, intègre un outil interactif d'évaluation de maturité stratégique ("Diagnostic Flash") calculant un score d'opportunité en temps réel, présente des études de cas chiffrées et propose un formulaire sécurisé de demande d'audit sous accord de confidentialité (NDA).
-
-### Fonctionnalités Clés
-- **Identité Visuelle Prestige & Institutionnelle** : Fond sombre bleuté (`#0A1118`), nuances vert émeraude (`#10B981`) et platine, conforme aux standards des cabinets d'affaires internationaux.
-- **Outil Interactif "Diagnostic Flash"** : Questionnarie d'évaluation en 4 dimensions (tranche de CA, priorités stratégiques, degré de digitalisation, horizon temporel) avec calcul immédiat du score de potentiel et recommandations personnalisées.
-- **Présentation des Pôles d'Expertise & Livrables** : Fusions-acquisitions, transformation digitale, restructuration opérationnelle et conformité ESG.
-- **Études de Cas & Impacts Mesurés** : Présentation chiffrée de missions réalisées au Maroc avec gains financiers et opérationnels concrets.
-
-## Technologies Utilisées
-- **Framework** : [Next.js](https://nextjs.org/) (App Router)
-- **UI & Rendu** : [React](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
-- **Styles** : [Tailwind CSS](https://tailwindcss.com/)
-- **Icônes** : [Lucide React](https://lucide.dev/)
+Site web institutionnel d'entreprise haut de gamme pour un cabinet de conseil en stratégie de direction générale, ingénierie financière M&A, transformation digitale et performance opérationnelle à Casablanca Finance City et Paris.
 
 ---
 
-## Installation & Démarrage Local
+## 🏛️ Identité Visuelle & Direction Artistique
+
+Inspiré des plus hauts standards internationaux de conseil en management (référence Greenfield) :
+- **Palette chromatique statutaire** : Surfaces blanc pur et gris pierre très clair (`#FAFAF9`, `#FFFFFF`, `#F5F5F4`), typographie charbon (`#1C1917`), accents vert forêt profond (`#1C3D2B`) et nuances vert émeraude mesurées.
+- **Typographie éditoriale** : Titres forts en typographie avec empattements (*Playfair Display / Serif*) associés à un texte courant d'une clarté optimale (*Plus Jakarta Sans*).
+- **Photographie corporate réelle** : Architecture contemporaine de verre (Tour Casablanca Finance City), bureaux de direction, salles de réunion exécutives et sites industriels.
+- **Transparence & Rigueur déontologique** : Toutes les études de cas et profils sont explicitement présentés comme des simulations illustratives, sans promesse de rentabilité garantie ni faux logos d'entreprises.
+
+---
+
+## 🧭 Architecture des Pages & Modules
+
+1. **Page d'Accueil (`/`)** : Proposition de valeur claire, photographie corporate d'exception, grille des 4 pôles d'expertise, démarches, diagnostic flash intégré, études de cas et formulaire de consultation.
+2. **Le Cabinet & Gouvernance (`/a-propos`)** : Histoire du cabinet, modèle d'indépendance capitalistique à 100%, profils des associés fondateurs et implantation duale Casablanca Finance City & Paris.
+3. **Pôles d'Expertise (`/services`)** :
+   - Conseil en Stratégie & Croissance (`/services/strategie`)
+   - Corporate Finance, M&A & Ingénierie (`/services/finance`)
+   - Transformation Digitale & Systèmes ERP (`/services/digital`)
+   - Performance Opérationnelle & Supply Chain (`/services/operations`)
+4. **Fiches Détaillées Dynamiques (`/services/[slug]`)** : Génération statique (`generateStaticParams`) avec défis traités, livrables contractuels détaillés et contact direct associé.
+5. **Méthodologie d'Intervention (`/methodologie`)** : Les 4 étapes structurées d'un mandat (Immersion, Diagnostic analytique, Co-construction, Pilotage) et charte d'engagement réciproque.
+6. **Études de Cas Fictives (`/etudes-de-cas`)** : Simulations pédagogiques complètes filtrables par secteur (Agroalimentaire, Supply Chain, FinTech), métriques d'impacts modélisées et livrables remis.
+7. **Diagnostic Stratégique Interactif (`/diagnostic`)** : Questionnaire d'évaluation 4 étapes avec calcul reproductible de score, recommandations sur-mesure, réinitialisation/modification des réponses, impression de synthèse et exécution 100% locale sans envoi serveur.
+8. **Secrétariat & Contact (`/contact`)** : Formulaire de demande de consultation sous accord NDA avec validation des champs sans fausse promesse d'envoi serveur, horaires et canal direct WhatsApp.
+9. **Foire Aux Questions Déontologique (`/faq`)** : Accordéon interactif avec recherche par mot-clé et filtrage par catégorie (Mandats, Confidentialité & NDA, Honoraires, Équipe).
+10. **Cadre Légal & Déontologique** :
+    - Mentions Légales & Cadre de Démonstration (`/mentions-legales`)
+    - Politique de Confidentialité & Engagement NDA (`/confidentialite`)
+
+---
+
+## 🛠️ Stack Technique
+
+- **Framework** : [Next.js 16 (App Router)](https://nextjs.org/)
+- **UI & Rendu** : [React 19](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
+- **Styles** : [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icônes** : [Lucide React](https://lucide.dev/)
+- **Typographie** : Playfair Display & Plus Jakarta Sans (Google Fonts)
+
+---
+
+## 🚀 Installation & Démarrage Local
 
 ### Prérequis
-- Node.js version 18.18+ ou 20+
-- npm version 9+
+- Node.js 18.18+ ou 20+
+- npm 9+
 
 ### 1. Installation des Dépendances
 ```bash
 npm install
 ```
 
-### 2. Démarrer le Serveur Local
+### 2. Démarrer le Serveur de Développement
 ```bash
 npm run dev
 ```
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-### 3. Compiler pour la Production
+### 3. Compilation pour la Production
 ```bash
 npm run build
 ```
 
-### 4. Lancer la Version Compilée
+### 4. Lancer le Serveur de Production
 ```bash
 npm run start
 ```
 
 ---
 
-## Déploiement Indépendant
+## 📄 Mentions de Démonstration & Propriété Intellectuelle
 
-### Option A : Dépôt GitHub Séparé (Recommandé)
+Ce site web est un projet de démonstration conçu et développé dans le cadre du portfolio d'ingénierie web de **Tariq Abala**.
 
-1. Initialisez un nouveau dépôt Git dans ce dossier :
-   ```bash
-   cd business-website
-   git init
-   git add .
-   git commit -m "feat: initial commit of Atlas Strategic Advisory project"
-   ```
-2. Créez un nouveau dépôt public ou privé sur GitHub nommé `business-website` :
-   ```bash
-   git remote add origin https://github.com/VOTRE_NOM_UTILISATEUR/business-website.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. Connectez-vous sur [Vercel](https://vercel.com/) :
-   - Cliquez sur **Add New...** > **Project**
-   - Importez le dépôt `business-website`
-   - Le framework Next.js est automatiquement détecté
-   - Cliquez sur **Deploy**
-
-### Option B : Déploiement Monorepo (depuis le dossier racine)
-Si vous conservez tous les projets dans un seul dépôt :
-- Sur Vercel, définissez **Root Directory** sur `business-website`.
-- Les scripts de build et d'installation fonctionneront automatiquement.
-
----
-
-## Variables d'Environnement
-Ce projet ne requiert aucune variable d'environnement obligatoire pour fonctionner en mode vitrine.
-
-Variables optionnelles :
-- `NEXT_PUBLIC_ADVISORY_PHONE` (Optionnel) : Numéro de téléphone direct du standard.
-- `NEXT_PUBLIC_ADVISORY_EMAIL` (Optionnel) : Adresse email de réception des demandes.
-
----
-
-## Auteur & Copyright
-Développé par [**Tariq Abala**](https://tariqabala.com) — Web Development & Digital Solutions.
-*Professional Websites • Business Applications • Custom Admin Panels*
-
-© 2026 TARIQ ABALA. Tous droits réservés.
+**Développé par [Tariq Abala](https://tariqabala.com)**  
+*TARIQ ABALA • Web Development & Digital Solutions • Professional Websites • Business Applications • Custom Admin Panels*  
+© 2026 Atlas Advisory Group. Tous droits réservés.
