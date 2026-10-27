@@ -112,15 +112,20 @@ export default function Navbar() {
                     onMouseEnter={() => setServicesDropdown(true)}
                     onMouseLeave={() => setServicesDropdown(false)}
                   >
-                    <Link
-                      href={link.href}
+                    <button
+                      type="button"
+                      onClick={() => setServicesDropdown(!servicesDropdown)}
+                      aria-expanded={servicesDropdown}
+                      aria-haspopup="true"
                       className={`inline-flex items-center gap-1 transition-colors py-1 ${
                         isActive ? "text-[#1C3D2B] font-bold" : "hover:text-[#1C3D2B]"
                       }`}
                     >
-                      <span>{link.label}</span>
+                      <Link href={link.href} className="hover:underline">
+                        {link.label}
+                      </Link>
                       <ChevronDown className="w-3.5 h-3.5 text-stone-400" />
-                    </Link>
+                    </button>
 
                     {servicesDropdown && (
                       <div className="absolute top-full left-0 w-80 pt-2 z-50">
@@ -190,9 +195,11 @@ export default function Navbar() {
 
           {/* Mobile hamburger button */}
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100 transition-colors"
-            aria-label="Ouvrir le menu"
+            aria-label={mobileMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

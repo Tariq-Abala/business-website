@@ -182,6 +182,11 @@ export default function DiagnosticTool() {
     }
   };
 
+  const handleEditAnswers = () => {
+    setIsCalculated(false);
+    setCurrentStep(0);
+  };
+
   const handleReset = () => {
     setAnswers({});
     setCurrentStep(0);
@@ -293,13 +298,15 @@ export default function DiagnosticTool() {
             </p>
 
             {/* Options list */}
-            <div className="grid grid-cols-1 gap-3 pt-2">
+            <div className="grid grid-cols-1 gap-3 pt-2" role="radiogroup" aria-label={QUESTIONS[currentStep].title}>
               {QUESTIONS[currentStep].options.map((option, idx) => {
                 const isSelected = answers[currentStep] === idx;
                 return (
                   <button
                     key={idx}
                     type="button"
+                    role="radio"
+                    aria-checked={isSelected}
                     onClick={() => handleSelectOption(idx)}
                     className={`text-left p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
                       isSelected
@@ -500,14 +507,24 @@ export default function DiagnosticTool() {
 
           {/* Actions CTA */}
           <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <button
-              type="button"
-              onClick={handleReset}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-stone-700 hover:bg-stone-100 transition-colors"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>Modifier les hypothèses du diagnostic</span>
-            </button>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={handleEditAnswers}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-stone-700 hover:bg-stone-100 transition-colors border border-stone-200"
+              >
+                <RotateCcw className="w-3.5 h-3.5 text-stone-500" />
+                <span>Modifier mes réponses</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleReset}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium text-stone-500 hover:text-stone-800 transition-colors"
+              >
+                <span>Réinitialiser à zéro</span>
+              </button>
+            </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <button
